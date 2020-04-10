@@ -1,4 +1,5 @@
 import Foundation
+import Files
 import Publish
 import Plot
 
@@ -17,9 +18,9 @@ struct AppLandingPage: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://app-landingpage-demo.netlify.com")!
-    var name = "Fantasy App"
-    var description = "A project I've been working on (in my dreams) for ages, soon available on iOS, iPadOS, macOS and also watchOS! Oh did I forget to mention tvOS?"
+    var url = URL(string: "https://beantastic.app")!
+    var name = "Beantastic App"
+    var description = "Save, seach and find coffee beans you love."
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
@@ -30,16 +31,15 @@ extension Website {
     }
 
     var credits: Link {
-        ("Some Developer(s)", "https://")
+        ("Julian Kahnert", "https://github.com/julianKahnert/")
     }
     
     var footerLinks: [Link] {
         [(name: "Home", url: "/"),
-        (name: "Support", url: "mailto:"),
+        (name: "Support", url: "mailto:support@beantastic.app"),
         (name: "About", url: "/about")]
     }
 }
 
 // This will generate your website using the built-in Foundation theme:
 try AppLandingPage().publish(withTheme: .landingpage)
-
